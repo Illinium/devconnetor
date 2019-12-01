@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://illinium:kalambur@cluster-nikod.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtSecret": "mysecret"
+  "jwtSecret": "mysecret",
+  "githubClientId": "074c101da2b51d925f4a",
+  "githubSecret": "aea4a23daba390491184a228dc47fdd2e7d3051f"
 }
