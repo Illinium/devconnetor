@@ -28,7 +28,7 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
-// @rout  Post api/profile/me
+// @rout  Post api/profile/
 // #desc  Create or Update users profile
 // @access Private
 
