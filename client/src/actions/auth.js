@@ -8,9 +8,17 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
-  CLEAR_PROFILE
+  CLEAR_PROFILE,
+  NO_TOKEN
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
+
+// NO Token
+export const noToken = () => dispatch => {
+  dispatch({
+    type: NO_TOKEN
+  });
+};
 
 // Load User
 export const loadUser = () => async dispatch => {

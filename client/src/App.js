@@ -13,12 +13,13 @@ import Profile from "./components/profile/Profile";
 import Alert from "./components/layout/Alert";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Profiles from "./components/profiles/Profiles";
+import Posts from "./components/posts/Posts";
 import "./App.css";
 // Redux
 import { Provider } from "react-redux";
 import store from "./store";
 import setAuthToken from "./utils/setAuthToken";
-import { loadUser } from "./actions/auth";
+import { loadUser, noToken } from "./actions/auth";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -26,7 +27,11 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser());
+    if (localStorage.token) {
+      store.dispatch(loadUser());
+    } else {
+      store.dispatch(noToken());
+    }
   }, []);
 
   return (
@@ -63,6 +68,7 @@ const App = () => {
                 path='/add-experience'
                 component={AddExperience}
               />
+              <PrivateRoute exact path='/posts' component={Posts} />
             </Switch>
           </section>
         </Fragment>
