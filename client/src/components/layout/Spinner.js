@@ -1,7 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
+import "./spinner.css";
+import spinnerImg from "../../img/Spinner.gif";
 
 export default () => (
-  <Fragment>
-    <h1>Spinner</h1>
-  </Fragment>
+  <div className="block">
+    <div>
+      <img src={spinnerImg} alt="Spinner"></img>
+    </div>
+  </div>
 );

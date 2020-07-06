@@ -7,6 +7,7 @@ import {
   ADD_POST,
   ADD_COMMENT,
   REMOVE_COMMENT,
+  RESET_POSTS_LOADING,
 } from "../actions/types";
 
 const initialState = {
@@ -74,6 +75,11 @@ export default function (state = initialState, action) {
           ),
         },
         loading: false,
+      };
+    case RESET_POSTS_LOADING:
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;
